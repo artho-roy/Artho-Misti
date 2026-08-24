@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         headerPlaceholder.innerHTML = `
             <header>
                 <div class="logo">
-                    <span>♥</span> Forever
+                    <span>♥</span> Artho&Oishe
                 </div>
 
                 <nav class="nav-links">
