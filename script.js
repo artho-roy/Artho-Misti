@@ -12,12 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
 
                 <nav class="nav-links">
-                    <a href="#hero">Home</a>
-                    <a href="#counter">Counter</a>
-                    <a href="#story">Our Story</a>
-                    <a href="#memories">Memories</a>
-                    <a href="#letter">Letter</a>
-                </nav>
+    <a href="#hero">Home</a>
+    <a href="#counter">Counter</a>
+    <a href="#special-dates">Special Dates</a>
+    <a href="#story">Our Story</a>
+    <a href="#memories">Memories</a>
+    <a href="#letter">Letter</a>
+</nav>
 
                 <button id="musicBtn" class="music-btn">
                     ♫ Music
@@ -28,6 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
         initMusicButton();
     }
 });
+
+
+
 
 // =====================================
 // MUSIC PLAYER LOGIC (Play / Pause toggle)
@@ -187,4 +191,86 @@ function checkPin() {
         lockError.textContent = "Wrong PIN! Try again ❤️";
         pinInput.value = "";
     }
+}
+
+// =====================================
+// SPECIAL DATES — add more items here
+// =====================================
+const specialDates = [
+    {
+        icon: "💞",
+        title: "Our Beginning",
+        date: "17 August 2025",
+        description: "The day our beautiful love story began."
+    },
+    {
+        icon: "🗓️",
+        title: "Every Month",
+        date: "The 17th",
+        description: "A little reminder of our beautiful beginning."
+    },
+{
+    icon: "🎂",
+    title: "Oishe's Birthday",
+    date: "21 November 2006",
+    description: "The day my favorite person came into this world."
+},
+{
+    icon: "🎂",
+    title: "My Birthday",
+    date: "05 October 2006",
+    description: "The day I came into this world."
+},
+{
+    icon: "🌹",
+    title: "Our First Date",
+    date: "3 April 2026",
+    description: "A beautiful moment I will always remember."
+},
+{
+    icon: "🫂",
+    title: "Going to see him with the family",
+    date: "04 September 2026",
+    description: "A beautiful moment I will always remember."
+},
+
+
+    // নিচের মতো আরও item যোগ করুন।
+    // আগের item-এর closing } এর পরে comma দিতে হবে।
+];
+
+function renderSpecialDates() {
+    const grid = document.getElementById("specialDatesGrid");
+    if (!grid) return;
+
+    grid.replaceChildren();
+
+    specialDates.forEach((item) => {
+        const card = document.createElement("article");
+        card.className = "date-card";
+
+        const icon = document.createElement("div");
+        icon.className = "date-icon";
+        icon.setAttribute("aria-hidden", "true");
+        icon.textContent = item.icon;
+
+        const label = document.createElement("span");
+        label.className = "date-label";
+        label.textContent = item.title;
+
+        const date = document.createElement("h3");
+        date.textContent = item.date;
+
+        const description = document.createElement("p");
+        description.textContent = item.description;
+
+        card.append(icon, label, date, description);
+        grid.appendChild(card);
+    });
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", renderSpecialDates);
+} else {
+    renderSpecialDates();
 }
