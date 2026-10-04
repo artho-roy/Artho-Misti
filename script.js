@@ -233,7 +233,12 @@ const specialDates = [
     date: "04 September 2026",
     description: "A beautiful moment I will always remember."
 },
-
+{
+  icon: "💍",
+  title: "Shubho Ashirbad",
+  date: "02 October 2026",
+  description: "A beautiful beginning blessed with love, joy, and the heartfelt wishes of our families."
+},
 
     // নিচের মতো আরও item যোগ করুন।
     // আগের item-এর closing } এর পরে comma দিতে হবে।
